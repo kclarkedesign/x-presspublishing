@@ -1,7 +1,7 @@
 const express = require('express');
 const app = express();
 
-module.export = app;
+
 
 //middleware for CORS requests
 const cors = require('cors');
@@ -21,7 +21,7 @@ if (process.env.NODE_ENV === 'development') {
 const morgan = require('morgan');
 app.use(morgan('dev'));
 
-const PORT = process.env.PORT || 4001;
+const PORT = process.env.PORT || 4000;
 
 app.listen(PORT, () => {
 	console.log(`Server is listening on port ${PORT}`);
@@ -29,3 +29,6 @@ app.listen(PORT, () => {
 
 const apiRouter = require('./api/api');
 app.use('/api', apiRouter);
+
+
+module.exports = app;
